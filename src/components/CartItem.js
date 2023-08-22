@@ -8,7 +8,7 @@ const CartItem = ({ img, title, price, amount }) => {
                 <h4>{title}</h4>
                 <h4 className="item-price">${price}</h4>
                 {/* remove button */}
-                <button className="remove-btn">remove</button>
+                <button className="remove-btn">Remove</button>
             </div>
             <div>
                 {/* increase amount */}
