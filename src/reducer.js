@@ -1,4 +1,4 @@
-import {DECREASE, INCREASE} from "./components/actions";
+
 
 function reducer(state, action) {
 
