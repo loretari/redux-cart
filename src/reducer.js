@@ -1,20 +1,29 @@
-import { CLEAR_CART } from "./actions"
+import { CLEAR_CART, INCREASE, DECREASE, REMOVE } from "./actions"
 
 function reducer(state, action) {
 
-    switch (action.type) {
-        case CLEAR_CART:
-            return { ...state, cart: [] };
-        default:
-            return state;
+if (action.type === CLEAR_CART) {
+    return { ...state, cart: [] }
+}
+    if (action.type === DECREASE) {
+       console.log("you have decreased amount")
     }
+    if (action.type === INCREASE) {
+        console.log("you have increase amount")
 
+    }
+    if (action.type === REMOVE) {
+        console.log("you have remove amount")
 
-
-// if (action.type === CLEAR_CART) {
-//     return { ...state, cart: [] }
-// }
-//     return state;
+    }
+    return state;
 }
 
 export default reducer;
+
+// switch (action.type) {
+//     case CLEAR_CART:
+//         return { ...state, cart: [] };
+//     default:
+//         return state;
+// }
