@@ -13,7 +13,9 @@ if (action.type === CLEAR_CART) {
 
     }
     if (action.type === REMOVE) {
-        console.log("you have remove amount")
+        return {
+            ...state,
+            cart: state.cart.filter(cartItem => cartItem.id !== action.payload.id) }
 
     }
     return state;
