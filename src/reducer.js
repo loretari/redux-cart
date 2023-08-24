@@ -1,4 +1,4 @@
-import { CLEAR_CART, INCREASE, DECREASE, REMOVE, GET_TOTALS } from "./actions"
+import { CLEAR_CART, INCREASE, DECREASE, REMOVE, GET_TOTALS, TOGGLE_AMOUNT } from "./actions"
 
 function reducer(state, action) {
 
@@ -53,6 +53,22 @@ if (action.type === CLEAR_CART) {
         total = parseFloat(total.toFixed(2))
         return { ...state, total, amount }
     }
+
+    if  (action.type === TOGGLE_AMOUNT ) {
+        return { ...state, cart: state.cart.map(cartItem => {
+              if (cartItem.id === action.payload.id) {
+                  if (action.payload.toggle === "inc") {
+                      return cartItem = {...cartItem, amount: cartItem.amount + 1}
+                  }
+                  if (action.payload.toggle === "dec") {
+                      return cartItem = {...cartItem, amount: cartItem.amount - 1}
+                  }
+              }
+
+            return cartItem
+            }) }
+    }
+
 return state;
 
 }
